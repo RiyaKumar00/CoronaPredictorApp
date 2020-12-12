@@ -25,7 +25,7 @@ SECRET_KEY = '9i^w!4rico+d$98-xa!v)oxi0s+!uy^!xttqnlo^$o++k)ejs0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','pandemicpredictor.herokuapp.com']
 
 
 # Application definition
