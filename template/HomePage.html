@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HomePage</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/Master_HP.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Inter:wght@600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand fixed-top">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav nav-fill w-100">
+          <a class="nav-link active" href="GoToForm">Predict Now<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="GoToTest">Take a Test</a>
+          <a class="nav-link" href="GoToTech">Technology Used</a>
+          <a class="nav-link" href="GoToAbout">About Us</a>
+        </div>
+      </div>
+    </nav>
+    <div class="parallax" style="background-image: url('{% static "images/covid19.png" %}')">
+    </div>
+    <br>
+    <div class="container">
+      <p>
+        <br>Coronavirus disease 2019 (COVID-19), a highly infectious disease, was first detected in Wuhan, China, in December 2019. The disease has spread
+        to 212 countries and territories around the world and infected (confirmed) more than forty-six million people. In India, the disease
+        was first detected on 30 January 2020 in Kerala in a student who returned from Wuhan.While coronaviruses are common, coronavirus (COVID-19)
+        is a new strain of coronavirus that had previously not been identified in humans. The key features of COVID-19 are respiratory symptoms with a
+        fever and cough.
+      </p>
+      <p>The virus is spread through respiratory droplets produced by an infected person through coughing and sneezing or by touching surfaces with the virus on them.
+        Currently there are more than eleven million active cases in the world. With such a widespread, it becomes necessary to analyse the
+        growth pattern of this disease and predict its future growth to make required arrangements in our resources to handle the worst situation.
+        This is exactly what our application does! Using the latest algorithms in Machine Learning and a huge database to support our models, We
+        can predict the number of cases in each state for the next seven days.
+      </p>
+        Along with predicting the number of cases in your state, we also provide a simple online test that will analyse your symptoms and help you
+        in deciding whether to seek medical help or not.
+      <p>
+      </p>
+      <br>
+    </div>
+    <div class="parallax secondimg" style="background-image: url('{% static "images/img2.jpg" %}')">
+      <h2 id="heading2">OUR SERVICES</h2>
+    </div>
+    <br>
+    <div id="secondpara" class="container">
+      <table>
+        <tr>
+          <td>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <p class="headings">PREVENTION</p>
+                  <img src="{% static 'images/Prevention.png' %}" alt="Avatar" height="140px">
+                </div>
+                <div class="flip-card-back">
+                  <p class="headings">PREVENTION</p>
+                  <p class="textInCards">If COVID-19 is spreading in your community, Protect yourself and others around you by knowing the facts and taking appropriate precautions.
+                  </p>
+                  <form  method="get" enctype="multipart/form-data" action="GoToPrevention">
+                    {% csrf_token %}
+                    <button id="SymptomButton" type="submit" class="btn btn-primary">CHECK PREVENTION <br>MEASURES</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <p class="headings">SYMPTOMS</p>
+                  <img src="{% static 'images/symptoms.png' %}" alt="Avatar" height="130px">
+                </div>
+                <div class="flip-card-back">
+                  <p class="headings">SYMPTOMS</p>
+                  <p class="textInCards">COVID-19 affects different people in different ways.Most infected people will develop mild to moderate illness and recover without hospitalization.
+                  </p>
+                  <form  method="get" enctype="multipart/form-data" action="GoToSymptoms">
+                    {% csrf_token %}
+                    <button id="SymptomButton" type="submit" class="btn btn-primary">CHECK COMMON <br>SYMPTOMS</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td><div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <p class="headings">PREDICTION</p>
+                <img src="{% static 'images/Predict.png' %}" alt="Avatar" height="128px">
+              </div>
+              <div class="flip-card-back">
+                <p class="headings">PREDICTION</p>
+                <p class="textInCards">Our advanced Machine Learning Models help you to predict the count of new cases in your state for the next seven days based on the past data.
+                </p>
+                <form  method="get" enctype="multipart/form-data" action="GoToForm">
+                  {% csrf_token %}
+                  <button id="SymptomButton" type="submit" class="btn btn-primary">GET PREDICTION <br>NOW!</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          </td>
+          <td>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <p class="headings">TEST</p>
+                  <img src="{% static 'images/Test.png' %}" alt="Avatar" height="128px">
+                </div>
+                <div class="flip-card-back">
+                  <p class="headings">TAKE A TEST</p>
+                  <p class="textInCards">A carefully devised test that will help you make decisions on when to seek testing and medical care with the help of a series of questions.
+                  </p>
+                  <form  method="get" enctype="multipart/form-data" action="GoToTest">
+                    {% csrf_token %}
+                    <button id="SymptomButton" type="submit" class="btn btn-primary">TAKE A TEST <br>NOW!</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <br>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Predictor</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/CPForm_Master.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Inter:wght@600&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="{% static 'js/CPForm_JS.js' %}"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand fixed-top">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav nav-fill w-100">
+          <a id="spcnav" class="nav-link active" href="GoToHome">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="GoToTest">Take a Test</a>
+          <a class="nav-link" href="GoToTech">Technology Used</a>
+          <a class="nav-link" href="GoToAbout">About Us</a>
+        </div>
+      </div>
+    </nav>
+    <div class="parallax secondimg" style="background-image: url('{% static "images/img2.jpg" %}')">
+      <div class="container">
+        <br>
+        <div class= FormBox>
+          <form method="post" enctype="multipart/form-data" action="predictCovid" onsubmit="return validate()">
+            {% csrf_token %} <!--Prevents us from cross sight request forgery attack-SECURITY Purpose-->
+            <h5 >Hello! Please Enter the Details Below <br><br></h5>
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="Name">First Name</label>
+                <input id="fname" class="form-control" type="text" placeholder="Enter Your First Name" name="fNameVal">
+              </div>
+              <div class="form-group col">
+                <label for="Age">Last Name</label>
+                <input id="lname" class="form-control" type="text" placeholder="Enter Your Last Name" name="lNameVal">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="Age">Email Address</label>
+                <input id="email" class="form-control" type="email" placeholder="abc@gmail.com" name="EmailVal">
+              </div>
+              <div class="form-group col">
+                <label for="Age">Age</label>
+                <input id="age" class="form-control" type="text" placeholder="Enter Your Age" name="AgeVal">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="inputState">State <span style="color: red">*</span></label>
+                <select name='StateVal' id="inputState" class="form-control" required placeholder="Choose a State">
+                  <option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Andaman and Nicobar Islands</option><option>Assam</option><option>Bihar</option><option>Chandigarh</option><option>Chhattisgarh</option><option>Dadra and Nagar Haveli and Daman and Diu</option><option>Delhi</option><option>Goa</option>
+                  <option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option><option>Jammu and Kashmir</option><option>Jharkhand</option><option>Karnataka</option><option>Kerala</option><option>Ladakh</option><option>Lakshadweep</option><option>Madhya Pradesh</option>
+                  <option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option><option>Mizoram</option><option>Nagaland</option><option>Odisha</option><option>Puducherry</option><option>Punjab</option><option>Rajasthan</option><option>Sikkim</option>
+                  <option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option>
+                </select>
+              </div>
+              <div class="form-group col" id="inputDays">
+                <label for="inputState">Predict For Next: <span style="color: red">*</span></label>
+                <select name='DaysVal' class="form-control" required>
+                  <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                  <option>6</option><option>7</option>
+                </select>
+              </div>
+            </div>
+            <button id="SubmitButton" type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% if PredictedCases %}
+    <div  class="container" id="ResultTable">
+      <h3>
+        {% for key, values in PredictedCases.items %}
+          {% if not key %}
+            predicted cases in {{values}}
+          {% endif %}
+        {% endfor %}
+      </h3>
+      <table>
+        <tr id="topRow">
+          <td class="heading">Day</td>
+          {% for key, values in PredictedCases.items %}
+            {% if key %}
+              <td>{{key}}</td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+        <tr>
+          <td class="heading">Cases</td>
+          {% for key, values in PredictedCases.items %}
+          {% if key %}
+            <td>{{values}}</td>
+          {% endif %}
+          {% endfor %}
+        </tr>
+        </table>
+      {% endif %}
+    </div>
+    </div>
+  </body>
+</html>

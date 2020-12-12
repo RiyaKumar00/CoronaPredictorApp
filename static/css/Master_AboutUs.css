@@ -1,0 +1,97 @@
+body{
+  overflow-x: hidden;
+  background-color: black;
+  color: white;
+}
+h3{
+  color: #32b3feff;
+  font-size: 52px;
+  font-family: 'Dosis', sans-serif;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 5%;
+}
+.nav-link:hover{
+  color: #32b3feff;
+}
+.nav-link:after{
+  content: '';
+  width: 0;
+  height: 1.5px;
+  background: #32b3feff;
+  display: block;
+  margin: auto;
+  transition: .5s;
+}
+.nav-link:hover:after{
+  width: 100%;
+  color: #32b3feff;
+}
+.nav-link{
+  text-transform: uppercase;
+  color: white;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  cursor: pointer
+}
+.bars>div {
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #fff;
+  top: 78px;
+  right: 40px;
+}
+.bars>div:before, .bars>div:after {
+  position: absolute;
+  content: '';
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.bars>div:before{
+  width: 50%;
+  top: -6px;
+}
+.bars>div:after{
+  width: 70%;
+  top: -12px;
+}
+.navbar{
+  background-color: black;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0448a5ff;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #32b3feff;
+}
+.container{
+  padding-top: 5%;
+}
+.ImageCell{
+  text-align: center;
+  height: 300px;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-bottom: 8%;
+  background-image:  url("/static/images/img2.jpg");
+  background-size: contain;
+}
+.imgcard{
+  height: 100%;
+}
+div#nxtrow.col-lg-3{
+  margin-left: 20%;
+}

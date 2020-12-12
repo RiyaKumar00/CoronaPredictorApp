@@ -1,0 +1,169 @@
+body{
+  overflow-x: hidden;
+  background-color: black;
+  color: white;
+}
+table{
+  height: 300px;
+  width: 100%;
+  margin-bottom: 3%;
+}
+td{
+  width: 25%;
+  text-align: center;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 2%;
+}
+p{
+  font-style: normal;
+}
+a:hover{
+  color: #32b3feff;
+}
+a:after{
+  content: '';
+  width: 0;
+  height: 1.5px;
+  background: #32b3feff;
+  display: block;
+  margin: auto;
+  transition: .5s;
+}
+a:hover:after{
+  width: 100%;
+  color: #32b3feff;
+}
+a{
+  text-transform: uppercase;
+  color: white;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  cursor: pointer
+}
+.bars>div {
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #fff;
+  top: 78px;
+  right: 40px;
+}
+.bars>div:before, .bars>div:after {
+  position: absolute;
+  content: '';
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.bars>div:before{
+  width: 50%;
+  top: -6px;
+}
+.bars>div:after{
+  width: 70%;
+  top: -12px;
+}
+.navbar{
+  background-color: black;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #021327ff;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0448a5ff;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #32b3feff;
+}
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+/* Position the front and back side */
+.flip-card-front{
+  padding-top: 25%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+.flip-card-back{
+  padding-top: 8%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: black;
+  color: black;
+}
+/* Style the back side */
+.flip-card-back {
+  background-color: #002561;
+  color: white;
+  transform: rotateY(180deg);
+}
+.parallax{
+  background-position: 0% 26%;
+  background-size: contain;
+  background-attachment: fixed;
+  height: 78vh;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+.headings{
+  color: #32b3feff;
+  font-size: 32px;
+  font-family: 'Dosis', sans-serif;
+  letter-spacing: 2px;
+}
+.secondimg{
+  background-size: cover;
+  background-position:center;
+  height: 26vh;
+}
+.textInCards{
+  font-size: 14px;
+}
+#heading2{
+  padding-top: 4.5%;
+  text-align: center;
+  font-size: 48px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 6px;
+  color: white!important;
+  text-shadow: 0px 0px 1px #32b3feff;
+}
+#SymptomButton{
+  margin-top: 3%;
+  font-size: 14px;
+}

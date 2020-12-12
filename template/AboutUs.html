@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Prevent Covid-19</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/Master_AboutUs.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Inter:wght@600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand fixed-top">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav nav-fill w-100">
+          <a class="nav-link active" href="GoToHome">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="GoToForm">Predict Now</a>
+          <a class="nav-link" href="GoToTest">Take a Test</a>
+          <a class="nav-link" href="GoToTech">Technology Used</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h3>ABOUT US</h3>
+      <div class="row">
+        <div class="ImageCell col-lg-3 col-md-6 col-sm-6 col-xs-6">
+          <img class='imgcard' src='{% static "images/uday.png" %}' alt="">
+        </div>
+        <div class="ImageCell col-lg-3 col-md-6 col-sm-6 col-xs-6">
+          <img class='imgcard' src='{% static "images/riya.png" %}' alt="">
+        </div>
+        <div class="ImageCell col-lg-3 col-md-6 col-sm-6 col-xs-6">
+          <img class='imgcard' src='{% static "images/sudhanshu.png" %}' alt="">
+        </div>
+        <div id="nxtrow" class="ImageCell col-lg-3 col-md-6 col-sm-6 col-xs-6">
+          <img class='imgcard' src='{% static "images/abhishek.png" %}' alt="">
+        </div>
+        <div class="ImageCell col-lg-3 col-md-6 col-sm-6 col-xs-6">
+          <img class='imgcard' src='{% static "images/dipti.png" %}' alt="">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

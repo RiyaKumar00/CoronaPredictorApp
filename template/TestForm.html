@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Predictor</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/Master_Test.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Inter:wght@600&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'js/CPForm_JS.js' %}"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand fixed-top">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav nav-fill w-100">
+          <a id="spcnav" class="nav-link active" href="GoToHome">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="GoToForm">Predict Now</a>
+          <a class="nav-link" href="GoToTech">Technology Used</a>
+          <a class="nav-link" href="GoToAbout">About Us</a>
+        </div>
+      </div>
+    </nav>
+    <div class="parallax secondimg" style="background-image: url('{% static "images/img2.jpg" %}')">
+      <div class="container">
+        <br>
+        <div class= FormBox>
+          <form method="post" enctype="multipart/form-data" action="ShowResults" onsubmit="return validate()">
+            {% csrf_token %} <!--Prevents us from cross sight request forgery attack-SECURITY Purpose-->
+            <h5 >Scared? Calm down. Have a check! <br><br></h5>
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="inputState">Do you have difficulty breathing? <span style="color: red">*</span></label>
+                <select name='Option1' id="inputState" class="form-control" required placeholder="difficulty breathing?">
+                  <option>No</option><option>Sometimes</option><option>Yes</option>
+                </select>
+              </div>
+              <div class="form-group col">
+                <label for="inputState">Do you have chest pain? <span style="color: red">*</span></label>
+                <select name='Option2' id="inputState" class="form-control" required placeholder="Choose a State">
+                  <option>No</option><option>Sometimes</option><option>Yes</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="inputState">Do you have fever? <span style="color: red">*</span></label>
+                <select name='Option3' id="inputState" class="form-control" required placeholder="Choose a State">
+                  <option>No</option><option>Sometimes</option><option>Yes</option>
+                </select>
+              </div>
+              <div class="form-group col">
+                <label for="inputState">Do you have dry cough? <span style="color: red">*</span></label>
+                <select name='Option4' id="inputState" class="form-control" required placeholder="Choose a State">
+                  <option>No</option><option>Sometimes</option><option>Yes</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="inputState">Do you feel dizziness?<span style="color: red">*</span></label>
+                <select name='Option5' id="inputState" class="form-control" required placeholder="Choose a State">
+                  <option>No</option><option>Sometimes</option><option>Yes</option>
+                </select>
+              </div>
+              <div class="form-group col">
+                <label for="inputState">Loss of taste or smell?<span style="color: red">*</span></label>
+                <select name='Option6' id="inputState" class="form-control" required placeholder="Choose a State">
+                  <option>No</option><option>Faint</option><option>Yes</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="inputState">Do you have a sore throat?<span style="color: red">*</span></label>
+                <select name='Option7'class="form-control" required placeholder="Choose a State">
+                  <option>No</option><option>Faint</option><option>Yes</option>
+                </select>
+              </div>
+              <div class="form-group col">
+                <label for="inputState">Headache?<span style="color: red">*</span></label>
+                <select name='Option8' class="form-control" required placeholder="Choose a State">
+                  <option>No</option><option>Sometimes</option><option>Yes</option>
+                </select>
+              </div>
+            </div>
+            <button id="SubmitButton" type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <form class="end_result" action="index.html" method="post">
+            <p>{{answer}}</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

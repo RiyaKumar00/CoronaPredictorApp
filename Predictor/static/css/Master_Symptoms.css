@@ -1,0 +1,124 @@
+body{
+  overflow-x: hidden;
+  background-color: black;
+  color: white;
+}
+.nav-link:hover{
+  color: #32b3feff;
+}
+.nav-link:after{
+  content: '';
+  width: 0;
+  height: 1.5px;
+  background: #32b3feff;
+  display: block;
+  margin: auto;
+  transition: .5s;
+}
+.nav-link:hover:after{
+  width: 100%;
+  color: #32b3feff;
+}
+.nav-link{
+  text-transform: uppercase;
+  color: white;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  cursor: pointer
+}
+.bars>div {
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #fff;
+  top: 78px;
+  right: 40px;
+}
+.bars>div:before, .bars>div:after {
+  position: absolute;
+  content: '';
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.bars>div:before{
+  width: 50%;
+  top: -6px;
+}
+.bars>div:after{
+  width: 70%;
+  top: -12px;
+}
+.navbar{
+  background-color: black;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #021327ff;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0448a5ff;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #32b3feff;
+}
+.contentBackground{
+  padding-left: 12%;
+  padding-right: 12%;
+  background-image: url("/static/images/img2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  height: 246vh;
+}
+.content{
+  padding-top: 8%;
+  background-color: black;
+  color: white;
+  text-align: justify;
+  padding-left: 8%;
+  padding-right: 8%;
+  height: 235vh;
+}
+h2{
+  text-align: center;
+  margin-bottom: 4%;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 6px;
+  color: #32b3feff;
+}
+p{
+  margin-top: 5%;
+}
+ul{
+  background-color:  #041631ff;
+  border-radius: 20px;
+  border: 20px solid #041631ff;
+}
+#heading2{
+  padding-top: 4%;
+  text-align: center;
+  font-size: 48px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 6px;
+  color: white!important;
+  text-shadow: 0px 0px 1px #32b3feff;
+}
+#SubText{
+  margin-top: 14.5%;
+  font-size: 14px;
+  text-align: center;
+}
+#NoHoverEffect{
+  color: white;
+}
+#NoHoverEffect:hover{
+  color:white;
+  text-decoration: none;
+}
