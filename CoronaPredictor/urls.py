@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.static import serve
 from django.conf.urls import url
 from Predictor import views
 urlpatterns = [
@@ -28,5 +29,7 @@ urlpatterns = [
     url('GoToTest',views.GoToTest,name='gtt'),
     url('GoToHome',views.GoToHome, name='gth'),
     url('GoToTech', views.GoToTech, name='gttech'),
-    url('GoToAbout',views.GoToAbout, name='gta')
+    url('GoToAbout',views.GoToAbout, name='gta'),
+    url(r'^media/(?P<path>.*)$', serve,{'document_root':  settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
