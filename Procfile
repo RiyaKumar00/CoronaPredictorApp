@@ -1,1 +1,1 @@
-web: gunicorn Predictor.wsgi --log-file -
+web: gunicorn CoronaPredictor.wsgi --log-file -
